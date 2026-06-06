@@ -1,4 +1,3 @@
-/* ===== GENERAL STYLES ===== */
 * {
     margin: 0;
     padding: 0;
@@ -22,7 +21,6 @@ body {
     height: 100vh;
 }
 
-/* ===== SIDEBAR STYLES ===== */
 .sidebar {
     width: 70px;
     background: rgba(0, 0, 0, 0.15);
@@ -123,7 +121,6 @@ body {
     display: inline;
 }
 
-/* ===== MAIN CONTENT AREA ===== */
 .main-content {
     flex: 1;
     display: flex;
@@ -149,7 +146,6 @@ body {
     display: block;
 }
 
-/* ===== MUSIC TOGGLE BUTTON ===== */
 .music-toggle {
     position: fixed;
     top: 20px;
@@ -175,7 +171,6 @@ body {
     50% { transform: scale(1.15); }
 }
 
-/* ===== CONTAINER & ENVELOPE ===== */
 .container {
     position: relative;
     width: 100%;
@@ -263,7 +258,6 @@ body {
     transform: rotateX(180deg);
 }
 
-/* ===== WAX SEAL ===== */
 .wax-seal {
     position: absolute;
     width: 80px;
@@ -306,7 +300,6 @@ body {
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== STAMPS ===== */
 .stamps-container {
     position: absolute;
     bottom: 20px;
@@ -341,7 +334,6 @@ body {
     object-fit: cover;
 }
 
-/* ===== LETTER ===== */
 .letter {
     position: absolute;
     width: 90%;
@@ -411,7 +403,6 @@ body {
     font-style: italic;
 }
 
-/* ===== PET BUTTONS ===== */
 .pet-button {
     position: absolute;
     bottom: -50px;
@@ -472,7 +463,6 @@ body {
     transform: translateX(-50%) scale(1.05);
 }
 
-/* ===== CONTENT CARDS (About & Contact Pages) ===== */
 .content-card {
     background: rgba(255, 255, 255, 0.95);
     padding: 40px;
@@ -507,7 +497,6 @@ body {
     font-family: 'Arial', sans-serif;
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
     .sidebar {
         position: absolute;
