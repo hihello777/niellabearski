@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DANIELLA ANN ARCILLA GULAPA</title>
+    <link rel="stylesheet" href="nienie.css">
+    <link rel="stylesheet" href="nieniemusicpage.css">
+    <link rel="stylesheet" href="nieniehome-page.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-title">NIE LLA</div>
+            <button class="toggle-btn" id="toggleBtn">✕</button>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a class="nav-link active" data-page="home">
+                        <span>🏠</span>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" data-page="letter">
+                    <span>✉️</span>
+                    <span>Letter 3></span>
+                </a>
+                <li class="nav-item">
+                    <a class="nav-link" data-page="page1">
+                        <span>🎵</span>
+                        <span>MUSIC!</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-page="page2">
+                        <span>📸</span>
+                        <span>page2</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-page="gallery">
+                        <span>🐱</span>
+                        <span>the baby gallery</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <button class="music-toggle" id="musicToggle">🔊</button>
+        
+                <!-- Home Page -->
+            <div class="page-content active" id="home">
+
+                <!-- Floating cats background -->
+                <div class="cat-float-layer" id="catFloatLayer"></div>
+
+                <div class="home-layout">
+
+                    <!-- LEFT: Greeting + Clock -->
+                    <div class="home-left">
+                        <div class="greeting-card">
+                            <div class="greeting-cats">
+                                <span class="g-cat" id="gCat1">🐱</span>
+                                <span class="g-cat" id="gCat2">🐾</span>
+                                <span class="g-cat" id="gCat3">🐱</span>
+                            </div>
+                            <div class="greeting-text" id="greetingText">good morning, dani!</div>
+                            <div class="greeting-sub" id="greetingSub">kamusta ka ngayon? 🌸</div>
+                            <div class="clock-display" id="clockDisplay">--:--</div>
+                            <div class="date-display" id="dateDisplay">---</div>
+                        </div>
+
+                        <!-- Today's schedule (hardcoded by Harvey) -->
+                        <div class="schedule-card">
+                            <div class="schedule-title">DAILY REMINDER!!! </div>
+                            <div class="schedule-list" id="scheduleList">
+                                <div class="sched-item">
+                                    <span class="sched-label">drink your water!!!</span>
+                                </div>
+                                <div class="sched-item">
+                                    <span class="sched-label">daily puzzles!</span>
+                                </div>
+                                <div class="sched-item">
+                                    <span class="sched-label">pet thy babies!</span>
+                                </div>
+                                <div class="sched-item">
+                                    <span class="sched-label">pakabusog palagi!</span>
+                                </div>
+                                <div class="sched-item">
+                                    <span class="sched-label">i love you</span>
+                                </div>
+                                <div class="sched-item">
+                                    <span class="sched-label">pahingi pictures!</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT: Calendar + Reminders -->
+                    <div class="home-right">
+                        <div class="calendar-card">
+                            <div class="cal-header">
+                                <button class="cal-nav" id="calPrev">‹</button>
+                                <div class="cal-month-year" id="calMonthYear">June 2026</div>
+                                <button class="cal-nav" id="calNext">›</button>
+                            </div>
+                            <div class="cal-days-header">
+                                <span>Sun</span><span>Mon</span><span>Tue</span>
+                                <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                            </div>
+                            <div class="cal-grid" id="calGrid"></div>
+                        </div>
+
+                        <!-- Reminders for selected day -->
+                        <div class="reminders-card">
+                            <div class="reminders-header">
+                                <div class="reminders-title" id="remindersTitle">📌 activities</div>
+                                <button class="add-btn" id="addReminderBtn">+ add</button>
+                            </div>
+                            <div class="reminders-list" id="remindersList">
+                                <div class="no-reminders">FOR ACTIVITIES/REMINDERS ^^^</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Add reminder modal -->
+                <div class="modal-overlay" id="modalOverlay">
+                    <div class="modal-box">
+                        <div class="modal-title" id="modalTitle">add activity</div>
+                        <input class="modal-input" id="reminderInput" type="text" placeholder="input mo stuff na gusto mo">
+                        <input class="modal-input" id="reminderTime" type="time">
+                        <div class="modal-emoji-row">
+                            <span class="modal-emoji-label">icon:</span>
+                            <div class="emoji-choices" id="emojiChoices"></div>
+                        </div>
+                        <div class="modal-actions">
+                            <button class="modal-cancel" id="modalCancel">cancel</button>
+                            <button class="modal-save" id="modalSave">save 🐾</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+         <!-- baby page -->
+
+        <div class="page-content" id="gallery">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/cat2.jpg" alt="pipper">
+                <div class="gallery-item">
+                    <img src="images/cat3.jpg" alt="pepper">
+                    <div class="gallery-caption">pepper 🍊</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/catX.jpg" alt="description">
+                    <div class="gallery-caption">caption</div>
+                </div>
+                        <div class="gallery-item">
+                    <img src="images/catX.jpg" alt="description">
+                    <div class="gallery-caption">caption</div>
+                </div>
+                        <div class="gallery-item">
+                    <img src="images/catX.jpg" alt="description">
+                    <div class="gallery-caption">caption</div>
+                </div>
+                        <div class="gallery-item">
+                    <img src="images/catX.jpg" alt="description">
+                    <div class="gallery-caption">caption</div>
+                </div>
+                        <div class="gallery-item">
+                    <img src="images/catX.jpg" alt="description">
+                    <div class="gallery-caption">caption</div>
+                </div>
+                        <div class="gallery-item">
+                    <img src="images/catX.jpg" alt="description">
+                    <div class="gallery-caption">caption</div>
+                </div>
+                        <div class="gallery-item">
+                    <img src="images/catX.jpg" alt="description">
+                    <div class="gallery-caption">caption</div>
+                </div>
+                        <div class="gallery-item">
+                    <img src="images/catX.jpg" alt="description">
+                    <div class="gallery-caption">caption</div>
+                </div>
+                        <div class="gallery-item">
+                    <img src="images/catX.jpg" alt="description">
+                    <div class="gallery-caption">caption</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/catX.jpg" alt="description">
+                    <div class="gallery-caption">caption</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <!-- Letter Page -->
+            <div class="page-content" id="letter">
+                <div class="container">
+                    <div class="envelope" id="envelope">
+                    <div class="envelope-back"></div>
+                    <div class="envelope-body"></div>
+                    <div class="envelope-flap"></div>
+                    <div class="wax-seal"></div>
+                    
+                    <div class="stamps-container">
+                        <div class="stamp" id="stamp1">
+                            <img src="images/pepper.jfif" alt="Stamp 1">
+                        </div>
+                        <div class="stamp" id="stamp2">
+                            <img src="images/pipper.jfif" alt="Stamp 2">
+                        </div>
+                    </div>
+
+                    <div class="letter">
+                        <div class="letter-content">
+                            <div class="letter-text">
+                                <p>to my dearest dani,</p>
+                                <p>dapat nga kasi diba, gagawan na lang din kita ng letter para ako cute, 
+                                    tsaka ayun na rin sana kapalit. pero buti rin pala binigyan mo ako ng 
+                                    deadline, kasi malamang hindi mo maintindihan sulat ko. kumbaga, maliit 
+                                    na letter lang 'to kumpara sa dapat na gagawin ko, saka ito na lang 
+                                    talaga naisip kong kapalit ng friend request ko sa fb mo (at snapchat(sana xd)), 
+                                    saka sa pagkawala ng pa-view once sa bawat picture mo sa messenger. 
+                                    pwede rin natin 'tong gamitin para sa pag-gagawaan mo ng site para 
+                                    sa mga bebe kapag naturuan na kita.<br>
+                                    
+                                    <br>so tungkol na lang ito sa essay na pinagawa mo sa aking patola 
+                                    ako—malamang hindi ko nga lang din nasabi sa iyo noon. pero kahit 
+                                    na nasabi ko na 'to ngayon, wala lang akong bayag noon para sabihin 
+                                    sa'yo gaano kita kagusto. i was some big ass pussy dati kasi 
+                                    (konti na lang ngayon). kahit ba di ka pa rin maniwala sa akin, 
+                                    gustong-gusto kita, niella. i really, really don't mind the waiting game, 
+                                    lalo kung para sa'yo. napag-usapan na rin naman natin kung paano magiging 
+                                    sistema natin noong mga nakaraan. kung hahayaan mo lang talaga at gusto 
+                                    mong intayin kita hanggang matapos ka sa pag-aaral para maligawan kita, 
+                                    magsabihan lang tayo.<br>
+                                    
+                                    <br>sana na lang talaga huwag kang maumay sa akin, lalo na't alam mo kung 
+                                    gaano ako katengot. kung hihingan mo man ako ng listahan ng mga bagay 
+                                    o kalidad na nagustuhan ko sa'yo, e malamang mangailangan ako ng bagong 
+                                    subdomain kasi baka hindi 'yon kayanin lahat dito. gusto ko rin dito 
+                                    sabihin na i really felt sorry noong may nasabi akong bad joke—hindi 
+                                    naman ako nagsisinungaling sa'yo; hirap lang talaga akong makaintindi 
+                                    siguro. at lastly para dito, sana hayaan mo pa 'kong (consistently) 
+                                    maipakita sa'yo kung gaano kita kagusto—hayaan mong landiin pa kita 
+                                    lalo. sabihan mo lang ako kapag sumusobra na 'ko. xd<br>
+                                    
+                                    <br>kung may kahit anong kailanganin ka man sa akin o kung may gusto kang 
+                                    i-kwento, i-rant, i-dump, itanong, o sabihin man lang, andito lang ako. 
+                                    naka-pin ka sa messenger ko. tyvm, chupa chups sour belt.<br>
+                                    
+                                    <br>ps. ngayon lang ako nasanay gumawa ng website. pls bear with me, at 
+                                    nanghingi ako ng tulong sa ai para sa animation ng envlope at sfx. 
+                                    ill try to make a better one din para kila cosmo and gray kapag mas natuto 
+                                    pa 'ko. magustuhan mo sana pa-bg music, inspired sa adorable home.<br>
+                                    
+                                    <br>galingan mo next week. mag-date tayo kapag nakaraos ka na diyan.
+                                <p>ever yours ,<br>harvey 3></p>
+                            </div>
+                            
+                            <div class="close-hint"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="pet-button" id="petButton">dont touch cosmo!</button>
+                <button class="pet-button-pepper" id="petButtonPepper">pet pipper!</button>
+            </div>
+        </div>
+
+        <!-- MUSIC PAGE -->
+<div class="page-content" id="page1">
+  <div class="sp-layout">
+    <div class="sp-sidebar">
+      <div class="sp-sidebar-header">your library</div>
+      <div class="sp-playlist-list" id="playlistList"></div>
+    </div>
+    <div class="sp-main">
+      <div class="sp-playlist-header" id="playlistHeader">
+        <div class="sp-playlist-cover" id="playlistCover">🎵</div>
+        <div class="sp-playlist-meta">
+          <span class="sp-playlist-label">playlist</span>
+          <div class="sp-playlist-name" id="playlistName">pick a playlist</div>
+          <div class="sp-playlist-count" id="playlistCount"></div>
+        </div>
+      </div>
+      <div class="sp-tracklist" id="tracklist"></div>
+    </div>
+    <div class="sp-nowplaying">
+      <div class="sp-np-art" id="npArt">♪</div>
+      <div class="sp-np-title" id="npTitle">—</div>
+      <div class="sp-np-artist" id="npArtist">select a song</div>
+      <div class="sp-progress-wrap">
+        <span class="sp-time" id="currentTime">0:00</span>
+        <div class="sp-progress" id="progressBar">
+          <div class="sp-progress-fill" id="progressFill"></div>
+          <div class="sp-progress-thumb" id="progressThumb"></div>
+        </div>
+        <span class="sp-time" id="totalTime">0:00</span>
+      </div>
+      <div class="sp-controls">
+        <button class="sp-btn" id="prevBtn">⏮</button>
+        <button class="sp-btn sp-btn-main" id="playPauseBtn">▶</button>
+        <button class="sp-btn" id="nextBtn">⏭</button>
+      </div>
+      <div class="sp-volume-row">
+        <span class="sp-vol-icon">🔈</span>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.3" class="sp-volume">
+        <span class="sp-vol-icon">🔊</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="nienie.js"></script>
+</body>
+</html>

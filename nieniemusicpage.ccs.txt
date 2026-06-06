@@ -1,0 +1,448 @@
+/* ============================================================
+   MUSIC PAGE — Spotify-inspired, warm romantic aesthetic
+   Add this to the bottom of nienie.css
+   ============================================================ */
+
+/* Layout */
+.sp-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr 260px;
+  gap: 0;
+  height: calc(100vh - 40px);
+  max-height: 700px;
+  background: #0d0d0d;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 20px;
+  font-family: 'Georgia', serif;
+}
+
+/* ── LEFT SIDEBAR ── */
+.sp-sidebar {
+  background: #111;
+  border-right: 1px solid #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sp-sidebar-header {
+  padding: 22px 18px 12px;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #555;
+  font-family: 'Georgia', serif;
+}
+
+.sp-playlist-list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 8px 16px;
+}
+
+.sp-playlist-list::-webkit-scrollbar { width: 4px; }
+.sp-playlist-list::-webkit-scrollbar-track { background: transparent; }
+.sp-playlist-list::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+
+.sp-pl-item {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.sp-pl-item:hover { background: #1a1a1a; }
+.sp-pl-item.active { background: #1e1a16; }
+
+.sp-pl-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  background: #1e1e1e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.sp-pl-item.active .sp-pl-icon {
+  background: #2a2018;
+}
+
+.sp-pl-info { min-width: 0; }
+.sp-pl-name {
+  font-size: 13px;
+  color: #ccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Georgia', serif;
+}
+.sp-pl-item.active .sp-pl-name { color: #e8d5b0; }
+.sp-pl-tracks {
+  font-size: 11px;
+  color: #444;
+  margin-top: 2px;
+}
+
+/* ── CENTER TRACKLIST ── */
+.sp-main {
+  background: #141414;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sp-playlist-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid #1a1a1a;
+  flex-shrink: 0;
+}
+
+.sp-playlist-cover {
+  width: 90px;
+  height: 90px;
+  border-radius: 8px;
+  background: #1e1a16;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 38px;
+  flex-shrink: 0;
+  border: 1px solid #2a2a2a;
+}
+
+.sp-playlist-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #555;
+  display: block;
+  margin-bottom: 4px;
+}
+.sp-playlist-name {
+  font-size: 22px;
+  color: #e8d5b0;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+}
+.sp-playlist-count {
+  font-size: 12px;
+  color: #444;
+  margin-top: 5px;
+}
+
+.sp-tracklist {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 16px 16px;
+}
+.sp-tracklist::-webkit-scrollbar { width: 4px; }
+.sp-tracklist::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 2px; }
+
+.sp-track-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 1px solid transparent;
+}
+.sp-track-item:hover { background: #1c1c1c; }
+.sp-track-item.active {
+  background: #1e1a14;
+  border-color: #2e2516;
+}
+
+.sp-track-num {
+  width: 22px;
+  text-align: center;
+  font-size: 12px;
+  color: #444;
+  flex-shrink: 0;
+}
+.sp-track-item.active .sp-track-num { color: #c9a96e; }
+
+.sp-track-emoji {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.sp-track-info { flex: 1; min-width: 0; }
+.sp-track-name {
+  font-size: 13px;
+  color: #bbb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Georgia', serif;
+}
+.sp-track-item.active .sp-track-name { color: #e8d5b0; }
+.sp-track-artist-name {
+  font-size: 11px;
+  color: #444;
+  margin-top: 2px;
+}
+
+.sp-track-dur {
+  font-size: 12px;
+  color: #3a3a3a;
+  flex-shrink: 0;
+}
+
+.sp-playing-anim {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 14px;
+  flex-shrink: 0;
+}
+.sp-playing-anim span {
+  display: block;
+  width: 3px;
+  background: #c9a96e;
+  border-radius: 1px;
+  animation: eq 0.8s ease-in-out infinite alternate;
+}
+.sp-playing-anim span:nth-child(2) { animation-delay: 0.2s; }
+.sp-playing-anim span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes eq {
+  from { height: 4px; }
+  to   { height: 14px; }
+}
+
+/* ── RIGHT: NOW PLAYING ── */
+.sp-nowplaying {
+  background: #111;
+  border-left: 1px solid #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 20px 24px;
+  gap: 0;
+}
+
+.sp-np-art {
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+  background: #1a1710;
+  border: 1px solid #2a2416;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 64px;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.sp-np-title {
+  font-size: 15px;
+  color: #e8d5b0;
+  font-family: 'Georgia', serif;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 5px;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sp-np-artist {
+  font-size: 12px;
+  color: #555;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+/* Progress */
+.sp-progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 18px;
+}
+
+.sp-time {
+  font-size: 10px;
+  color: #444;
+  flex-shrink: 0;
+  min-width: 28px;
+  text-align: center;
+}
+
+.sp-progress {
+  flex: 1;
+  height: 3px;
+  background: #222;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+.sp-progress:hover .sp-progress-thumb { opacity: 1; }
+
+.sp-progress-fill {
+  height: 3px;
+  background: #c9a96e;
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.1s linear;
+}
+
+.sp-progress-thumb {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #e8d5b0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.15s;
+  left: 0%;
+  pointer-events: none;
+}
+
+/* Controls */
+.sp-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.sp-btn {
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: color 0.15s, background 0.15s;
+  line-height: 1;
+}
+.sp-btn:hover { color: #c9a96e; background: #1a1a1a; }
+
+.sp-btn-main {
+  width: 44px;
+  height: 44px;
+  background: #c9a96e;
+  border-radius: 50%;
+  color: #0d0d0d;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sp-btn-main:hover { background: #e8d5b0; color: #0d0d0d; }
+
+/* Volume */
+.sp-volume-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+.sp-vol-icon { font-size: 13px; }
+
+.sp-volume {
+  flex: 1;
+  -webkit-appearance: none;
+  height: 3px;
+  background: #222;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+.sp-volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #c9a96e;
+  cursor: pointer;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .sp-layout {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: auto;
+    max-height: none;
+    margin: 10px;
+  }
+  .sp-sidebar {
+    border-right: none;
+    border-bottom: 1px solid #1e1e1e;
+    max-height: 160px;
+  }
+  .sp-sidebar-header { padding: 14px 18px 8px; }
+  .sp-playlist-list { display: flex; flex-direction: row; padding: 0 8px 10px; gap: 6px; }
+  .sp-pl-item { flex-direction: column; gap: 5px; padding: 8px; min-width: 80px; }
+  .sp-pl-info { display: none; }
+  .sp-nowplaying { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 18px; }
+  .sp-np-art { width: 80px; height: 80px; font-size: 32px; margin-bottom: 0; }
+}
+
+/* ── GALLERY ── */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 24px;
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    background: #1a1a1a;
+    transition: transform 0.2s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.2s;
+}
+
+.gallery-item:hover img {
+    opacity: 0.85;
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px 12px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.6));
+    color: #fff;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.gallery-item:hover .gallery-caption {
+    opacity: 1;
+}
